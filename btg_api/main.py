@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from routers import clientes, fondos, transacciones
 
-app = FastAPI(title="BTG Pactual API")
+app = FastAPI()
 
 app.include_router(clientes.router, prefix="/clientes", tags=["Clientes"])
 app.include_router(fondos.router, prefix="/fondos", tags=["Fondos"])

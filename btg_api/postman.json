@@ -1,0 +1,101 @@
+{
+  "info": {
+    "name": "BTG Pactual API",
+    "description": "Colección de endpoints para prueba técnica backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Registro de cliente",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Juan\",\n  \"email\": \"juan@example.com\",\n  \"password\": \"123456\",\n  \"preferencia_notificacion\": \"email\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/clientes/registro",
+          "host": ["{{base_url}}"],
+          "path": ["clientes", "registro"]
+        }
+      }
+    },
+    {
+      "name": "Login de cliente",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"juan@example.com\",\n  \"password\": \"123456\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/clientes/login",
+          "host": ["{{base_url}}"],
+          "path": ["clientes", "login"]
+        }
+      }
+    },
+    {
+      "name": "Listar fondos",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/fondos/",
+          "host": ["{{base_url}}"],
+          "path": ["fondos", ""]
+        }
+      }
+    },
+    {
+      "name": "Suscribir a fondo",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cliente_email\": \"juan@example.com\",\n  \"fondo_nombre\": \"FPV_BTG_PACTUAL_RECAUDADORA\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/transacciones/suscribir",
+          "host": ["{{base_url}}"],
+          "path": ["transacciones", "suscribir"]
+        }
+      }
+    },
+    {
+      "name": "Cancelar fondo",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cliente_email\": \"juan@example.com\",\n  \"fondo_nombre\": \"FPV_BTG_PACTUAL_RECAUDADORA\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/transacciones/cancelar",
+          "host": ["{{base_url}}"],
+          "path": ["transacciones", "cancelar"]
+        }
+      }
+    },
+    {
+      "name": "Historial de transacciones",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}/transacciones/historial?cliente_email=juan@example.com",
+          "host": ["{{base_url}}"],
+          "path": ["transacciones", "historial"],
+          "query": [
+            {
+              "key": "cliente_email",
+              "value": "juan@example.com"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

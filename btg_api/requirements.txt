@@ -3,3 +3,5 @@ uvicorn
 pymongo
 certifi
 python-dotenv
+bcrypt
+python-jose
